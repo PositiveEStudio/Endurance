@@ -1,0 +1,28 @@
+modLoader = "javafml"
+loaderVersion = "[40,)"
+license = "All rights reserved"
+
+[[mods]]
+modId = "endurance"
+version = "1.0"
+displayName = "Endurance"
+logoFile = "endurance.png"
+credits = ""
+authors = "MCXuFly"
+description = '''
+Endurance is a mod whitch makes player feel tired in game when player run for a long time.
+'''
+
+[[dependencies.endurance]]
+modId = "forge"
+mandatory = true
+versionRange = "[40,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.endurance]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.18.2,1.19)"
+ordering = "NONE"
+side = "BOTH"

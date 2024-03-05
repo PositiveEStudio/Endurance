@@ -1,0 +1,1 @@
+Endurance is a mod whitch makes player feel tired in game when player run for a long time.
