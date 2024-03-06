@@ -25,7 +25,7 @@ public class CapabilityProviderEndurance implements ICapabilityProvider, INBTSer
 	{
 		if (capabilityEndurance == null)
 		{
-			this.capabilityEndurance = new CapabilityEndurance(100);
+			this.capabilityEndurance = new CapabilityEndurance();
 		}
 		return capabilityEndurance;
 	}

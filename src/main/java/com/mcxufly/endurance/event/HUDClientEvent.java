@@ -9,7 +9,7 @@ import net.minecraftforge.fml.common.Mod;
 public class HUDClientEvent
 {
 	@SubscribeEvent
-	public static void onOverlayRander(RenderGameOverlayEvent event)
+	public static void onOverlayRender(RenderGameOverlayEvent event)
 	{
 		if(event.getType() != RenderGameOverlayEvent.ElementType.ALL)
 			return;

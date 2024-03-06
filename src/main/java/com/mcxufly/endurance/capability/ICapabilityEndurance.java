@@ -5,6 +5,9 @@ import net.minecraftforge.common.util.INBTSerializable;
 
 public interface ICapabilityEndurance extends INBTSerializable<CompoundTag>
 {
-    int getEndurance();
-    void setEndurance(int endurance);
+    double getEndurance();
+    void setEndurance(double endurance);
+    void resetEndurance();
+    void reduceEndurance();
+    void produceEndurance();
 }
