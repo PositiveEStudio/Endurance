@@ -1,5 +1,6 @@
 package com.mcxufly.endurance.capability;
 
+import com.mcxufly.endurance.Config;
 import com.mojang.logging.LogUtils;
 import net.minecraft.nbt.CompoundTag;
 import org.slf4j.Logger;

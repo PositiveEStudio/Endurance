@@ -18,7 +18,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.parchmentmc.librarian.forgegradle'
 
 
-version = '0.1.0-snapshot1'
+version = '0.1.1'
 group = 'com.mcxufly.endurance'
 archivesBaseName = 'endurance'
 

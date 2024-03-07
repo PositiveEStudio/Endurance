@@ -1,4 +1,4 @@
-package com.mcxufly.endurance.capability;
+package com.mcxufly.endurance;
 
 import net.minecraftforge.common.ForgeConfigSpec;
 
