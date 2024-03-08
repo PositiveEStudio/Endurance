@@ -1,15 +1,13 @@
 package com.mcxufly.endurance;
 
+import com.mcxufly.endurance.capability.ICapabilityEndurance;
+import com.mcxufly.endurance.gui.GUIEndurance;
 import com.mojang.logging.LogUtils;
-import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.event.server.ServerStartingEvent;
+import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
@@ -29,8 +27,8 @@ public class Endurance
 		bus.addListener(this::setup);
 		bus.addListener(this::enqueueIMC);
 		bus.addListener(this::processIMC);
-
-		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.COMMON_CONFIG);
+		bus.addListener(this::registerCapabilities);
+		bus.addListener(this::onClientSetup);
 
 		MinecraftForge.EVENT_BUS.register(this);
 	}
@@ -48,17 +46,13 @@ public class Endurance
 	{
 	}
 
-	@SubscribeEvent
-	public void onServerStarting(ServerStartingEvent event)
+	private void onClientSetup(final FMLClientSetupEvent event)
 	{
+		GUIEndurance.registerGUIEndurance();
 	}
 
-	@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-	public static class RegistryEvents
+	public void registerCapabilities(RegisterCapabilitiesEvent event)
 	{
-		@SubscribeEvent
-		public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent)
-		{
-		}
+		event.register(ICapabilityEndurance.class);
 	}
 }
